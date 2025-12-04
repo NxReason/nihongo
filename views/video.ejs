@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nihongo Video Player</title>
+  <%- include ('partials/head', {title: 'Nihongo Video Player'})%>
+  <link rel="stylesheet" href="/css/video-player.css">
 </head>
 <body>
-    <h1>Video player page</h1>
+  <%- include ('partials/header', {title: 'Video Player', activeClass : 'video-player' })%>
+  <main>
+    <div class="video-player-container">
+      <sectoin class="player-section">
+        <video src="/vid/test.mkv" class="video" controls>
+          Your browser does not support the video tag
+        </video>
+      </sectoin>
+      <section class="subs-section">
+        <div class="subs-controls">
+          <i class="icon icon-settings">s</i>
+          <i class="icon icon-layout">l</i>
+        </div>
+        <div class="subs-menu"></div>
+
+        <div class="subs-content"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/js/video-player.js"></script>
 </body>
 </html>

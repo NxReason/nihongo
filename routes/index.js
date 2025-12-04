@@ -4,7 +4,7 @@ import video from "./video.js";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("main");
+  res.render("index");
 });
 
 router.use("/video", video);

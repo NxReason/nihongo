@@ -1,0 +1,23 @@
+.video-player-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "player subs";
+  gap: 1rem;
+
+  padding: 1rem;
+}
+
+.player-section {
+  grid-area: player;
+}
+
+.subs-section {
+  grid-area: subs;
+  height: calc(100vh - 70px - 80px);
+  background-color: var(--bg-secondary);
+}
+
+.video {
+  max-width: 100%;
+  height: auto;
+}
