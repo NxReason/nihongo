@@ -15,20 +15,20 @@
       </sectoin>
       <section class="subs-section">
         <div class="subs-controls">
-          <i class="icon icon-upload active"></i>
-          <i class="icon icon-settings "></i>
-          <i class="icon icon-layout"></i>
+          <i class="icon icon-upload" id="uploads-btn"></i>
+          <i class="icon icon-settings active" id="settings-btn"></i>
+          <i class="icon icon-layout" id="layout-btn"></i>
         </div>
-        <div class="subs-menu">
+        <div class="subs-menu" id="subs-menu">
           <div class="subs-menu-common">
-            <span class="icon-box">
-              <i class="icon icon-hide"></i>
+            <span class="icon-box icon-hide-box">
+              <i class="icon icon-hide" id="hide-subs-menu-btn"></i>
               <span class="icon-subtext">hide</span>
             </span>
           </div>
-          <div class="subs-menu-tab">
+          <div class="subs-menu-tab-container">
             <!--UPLOAD-->
-            <div class="subs-menu-upload-tab" id="upload-tab">
+            <div class="subs-menu-tab subs-menu-upload-tab" id="uploads-tab">
               <span class="file-input-wrapper">
                 <input type="file" class="file-input" id="video-upload-input">
                 <label for="video-upload-input">
@@ -45,12 +45,20 @@
               </span>
             </div>
             <!--SETTINGS-->
-            <div class="subs-menu-settings-tab" id="settings-tab">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ad.</p>
+            <div class="subs-menu-tab subs-menu-settings-tab active" id="settings-tab">
+              <form id="subs-settings-form">
+                <div class="form-area">
+                  <label for="desync-input">
+                    <i class="icon icon-desync"></i>
+                    Desync
+                  </label>
+                  <input type="text" id="desync-input" class="desync-input" placeholder="0">
+                </div>
+              </form>
             </div>
             <!--LAYOUT-->
-            <div class="subs-menu-layout-tab" id="layout-tab">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, explicabo?</p>
+            <div class="subs-menu-tab subs-menu-layout-tab" id="layout-tab">
+              <p>Soon...</p>
             </div>
           </div>
         </div>

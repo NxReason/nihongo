@@ -80,6 +80,7 @@ header {
 }
 .icon-subtext {
   display: inline-block;
+  margin-top: 3px;
   padding: 2px 4px;
   border: 1px solid var(--neon-cyan-dim);
   font-size: 0.7rem;
@@ -103,8 +104,44 @@ header {
 .icon-subs-upload {
   background-image: url(/icons/comment-text-outline.svg);
 }
+.icon-desync {
+  background-image: url(/icons/timeline-clock-outline.svg);
+}
 
 /*FORM*/
+input::placeholder {
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+.form-area {
+  display: flex;
+  flex-direction: column;
+}
+.form-area label {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.form-area label .icon {
+  margin-right: 0.3rem;
+}
+.form-area input[type="text"] {
+  background-color: transparent;
+  border: 2px solid var(--neon-cyan-dim);
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  outline: none;
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.form-area input[type="text"]:focus {
+  border: 2px solid var(--neon-purple);
+}
 .file-input {
   position: absolute;
   width: 0.1px;
@@ -117,6 +154,7 @@ header {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 .file-input-wrapper label .icon {
   margin-right: 3px;
