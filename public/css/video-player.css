@@ -11,13 +11,55 @@
   grid-area: player;
 }
 
-.subs-section {
-  grid-area: subs;
-  height: calc(100vh - 70px - 80px);
-  background-color: var(--bg-secondary);
-}
-
 .video {
   max-width: 100%;
   height: auto;
+}
+
+.subs-section {
+  grid-area: subs;
+  height: calc(100vh - 70px - 80px);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-secondary);
+}
+.subs-controls {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  gap: 0.3rem;
+}
+.subs-controls .icon {
+  width: 2rem;
+  height: 2rem;
+  background-position: 0.17rem 0.17rem;
+  background-size: 1.8rem 1.8rem;
+}
+.subs-controls .icon.active {
+  background-color: var(--bg-tertiary);
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.subs-menu {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 1rem;
+  padding: 0.5rem;
+
+  background-color: var(--bg-tertiary);
+}
+.subs-menu-common {
+  border-right: 1px solid var(--neon-cyan-dim);
+}
+.subs-menu-upload-tab {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  height: 100%;
+}
+
+.subs-content {
+  margin-top: 0.5rem;
 }

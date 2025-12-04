@@ -62,6 +62,67 @@ header {
 
   background-color: var(--bg-secondary);
 }
+
+/*ICONS*/
+.icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+  background-position: 1px 1px;
+}
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon-subtext {
+  display: inline-block;
+  padding: 2px 4px;
+  border: 1px solid var(--neon-cyan-dim);
+  font-size: 0.7rem;
+  border-radius: 4px;
+}
+.icon-upload {
+  background-image: url(/icons/upload.svg);
+}
+.icon-settings {
+  background-image: url(/icons/cog-outline.svg);
+}
+.icon-layout {
+  background-image: url(/icons/view-grid-outline.svg);
+}
+.icon-hide {
+  background-image: url(/icons/arrow-up-left.svg);
+}
+.icon-video-upload {
+  background-image: url(/icons/file-video-outline.svg);
+}
+.icon-subs-upload {
+  background-image: url(/icons/comment-text-outline.svg);
+}
+
+/*FORM*/
+.file-input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.file-input-wrapper label {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.file-input-wrapper label .icon {
+  margin-right: 3px;
+}
+
+/*HEADER*/
 .title {
   align-self: center;
 }

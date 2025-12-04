@@ -15,10 +15,45 @@
       </sectoin>
       <section class="subs-section">
         <div class="subs-controls">
-          <i class="icon icon-settings">s</i>
-          <i class="icon icon-layout">l</i>
+          <i class="icon icon-upload active"></i>
+          <i class="icon icon-settings "></i>
+          <i class="icon icon-layout"></i>
         </div>
-        <div class="subs-menu"></div>
+        <div class="subs-menu">
+          <div class="subs-menu-common">
+            <span class="icon-box">
+              <i class="icon icon-hide"></i>
+              <span class="icon-subtext">hide</span>
+            </span>
+          </div>
+          <div class="subs-menu-tab">
+            <!--UPLOAD-->
+            <div class="subs-menu-upload-tab" id="upload-tab">
+              <span class="file-input-wrapper">
+                <input type="file" class="file-input" id="video-upload-input">
+                <label for="video-upload-input">
+                  <i class="icon icon-video-upload"></i>
+                  Video
+                </label>
+              </span>
+              <span class="file-input-wrapper">
+                <input type="file" class="file-input" id="subs-upload-input">
+                <label for="subs-upload-input">
+                  <i class="icon icon-subs-upload"></i>
+                  Subs
+                </label>
+              </span>
+            </div>
+            <!--SETTINGS-->
+            <div class="subs-menu-settings-tab" id="settings-tab">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ad.</p>
+            </div>
+            <!--LAYOUT-->
+            <div class="subs-menu-layout-tab" id="layout-tab">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, explicabo?</p>
+            </div>
+          </div>
+        </div>
 
         <div class="subs-content"></div>
       </section>
