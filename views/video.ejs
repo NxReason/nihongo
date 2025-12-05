@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include ('partials/head', {title: 'Nihongo Video Player'})%>
+  <%- include ('partials/head', {title: 'nihongo video player'})%>
   <link rel="stylesheet" href="/css/video-player.css">
 </head>
 <body>
-  <%- include ('partials/header', {title: 'Video Player', activeClass : 'video-player' })%>
+  <s%- include ('partials/header', {title: 'video player', activeclass : 'video-player' })%>
   <main>
     <div class="video-player-container">
       <sectoin class="player-section">
-        <video src="/vid/test.mkv" class="video" controls>
+        <video id="video-player" src="/vid/test.mkv" class="video" controls>
           Your browser does not support the video tag
         </video>
       </sectoin>
       <section class="subs-section">
         <div class="subs-controls">
-          <i class="icon icon-upload" id="uploads-btn"></i>
-          <i class="icon icon-settings active" id="settings-btn"></i>
+          <i class="icon icon-upload active" id="uploads-btn"></i>
+          <i class="icon icon-settings" id="settings-btn"></i>
           <i class="icon icon-layout" id="layout-btn"></i>
         </div>
         <div class="subs-menu" id="subs-menu">
@@ -27,47 +27,56 @@
             </span>
           </div>
           <div class="subs-menu-tab-container">
-            <!--UPLOAD-->
-            <div class="subs-menu-tab subs-menu-upload-tab" id="uploads-tab">
+            <!--upload-->
+            <div class="subs-menu-tab subs-menu-upload-tab active" id="uploads-tab">
               <span class="file-input-wrapper">
                 <input type="file" class="file-input" id="video-upload-input">
                 <label for="video-upload-input">
                   <i class="icon icon-video-upload"></i>
-                  Video
+                  video
                 </label>
               </span>
               <span class="file-input-wrapper">
                 <input type="file" class="file-input" id="subs-upload-input">
                 <label for="subs-upload-input">
                   <i class="icon icon-subs-upload"></i>
-                  Subs
+                  subs
                 </label>
               </span>
             </div>
-            <!--SETTINGS-->
-            <div class="subs-menu-tab subs-menu-settings-tab active" id="settings-tab">
+            <!--settings-->
+            <div class="subs-menu-tab subs-menu-settings-tab" id="settings-tab">
               <form id="subs-settings-form">
                 <div class="form-area">
                   <label for="desync-input">
                     <i class="icon icon-desync"></i>
-                    Desync
+                    desync
                   </label>
                   <input type="text" id="desync-input" class="desync-input" placeholder="0">
                 </div>
               </form>
             </div>
-            <!--LAYOUT-->
+            <!--layout-->
             <div class="subs-menu-tab subs-menu-layout-tab" id="layout-tab">
-              <p>Soon...</p>
+              <p>soon...</p>
             </div>
           </div>
         </div>
 
-        <div class="subs-content"></div>
+        <div class="subs-content" id="subs-content">
+          <li class="subs-group subs-group-template">
+            <p class="subs-group-time"></p>
+            <p class="subs-group-text"></p>
+          </li>
+          <ul class="subs-list" id="subs-list"></ul>
+        </div>
       </section>
     </div>
   </main>
 
   <script src="/js/video-player.js"></script>
+  <script src="/js/video-player-subs.js"></script>
+  <script src="/js/video-player-video.js"></script>
+  <script src="/js/video-player-controller.js"></script>
 </body>
 </html>

@@ -77,6 +77,30 @@
   width: 5rem;
 }
 
+/*CONTENT*/
 .subs-content {
   margin-top: 0.5rem;
+}
+
+.subs-group {
+  display: flex;
+  cursor: pointer;
+}
+.subs-group.current .subs-group-time {
+  background-color: var(--neon-purple);
+}
+.subs-group.current,
+.subs-group.current .subs-group-text {
+  background-color: var(--bg-tertiary);
+}
+.subs-group-time,
+.subs-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+.subs-group-time {
+  background-color: var(--neon-blue-dim);
+}
+.subs-group-text {
 }
