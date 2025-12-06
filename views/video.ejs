@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include ('partials/head', {title: 'nihongo video player'})%>
+  <%- include ('partials/head', {title: 'Nihongo Video Player'}) %>
   <link rel="stylesheet" href="/css/video-player.css">
 </head>
 <body>
-  <s%- include ('partials/header', {title: 'video player', activeclass : 'video-player' })%>
+  <%- include ('partials/header', {title: 'Video Player', activeClass : 'video-player' }) %>
   <main>
     <div class="video-player-container">
-      <sectoin class="player-section">
+      <section class="player-section">
         <video id="video-player" src="/vid/test.mkv" class="video" controls>
           Your browser does not support the video tag
         </video>
-      </sectoin>
+      </section>
       <section class="subs-section">
         <div class="subs-controls">
           <i class="icon icon-upload active" id="uploads-btn"></i>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="subs-content" id="subs-content">
-          <li class="subs-group subs-group-template">
+          <li class="subs-group subs-group-template" style="display: none;">
             <p class="subs-group-time"></p>
             <p class="subs-group-text"></p>
           </li>
@@ -74,7 +74,7 @@
     </div>
   </main>
 
-  <script src="/js/video-player.js"></script>
+  <script src="/js/video-player-menu.js"></script>
   <script src="/js/video-player-subs.js"></script>
   <script src="/js/video-player-video.js"></script>
   <script src="/js/video-player-controller.js"></script>

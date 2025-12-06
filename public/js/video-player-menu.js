@@ -71,9 +71,46 @@ SubsMenu.init();
  * UPLOADS
  *
  */
+const videoUpload = document.getElementById("video-upload-input");
+const subsUpload = document.getElementById("subs-upload-input");
+const Uploads = {
+  init() {},
 
+  addVideoUploadCallback(fn) {
+    videoUpload.addEventListener("change", () => {
+      const file = videoUpload.files[0];
+      if (file) {
+        fn(file);
+      }
+    });
+  },
+
+  addSubsUploadCallback(fn) {
+    subsUpload.addEventListener("change", () => {
+      const file = subsUpload.files[0];
+      if (file) {
+        fn(file);
+      }
+    });
+  },
+};
 /*
  *
  * SETTINGS
  *
  */
+const settingsForm = document.getElementById("subs-settings-form");
+const desyncInput = document.getElementById("desync-input");
+const Settings = {
+  init() {
+    settingsForm.addEventListener("submit", (e) => e.preventDefault());
+  },
+  addDesyncUpdate(fn) {
+    desyncInput.addEventListener("input", (e) => {
+      const valueNum = parseFloat(desyncInput.value);
+      if (!Number.isNaN(valueNum)) fn(valueNum);
+    });
+  },
+};
+
+Settings.init();

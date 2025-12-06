@@ -79,9 +79,19 @@
 
 /*CONTENT*/
 .subs-content {
+  display: flex;
+  flex-direction: column;
   margin-top: 0.5rem;
+  overflow: hidden;
 }
 
+.subs-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-color: var(--neon-cyan) transparent;
+}
 .subs-group {
   display: flex;
   cursor: pointer;

@@ -1,29 +1,3 @@
-const testStr = `
-1
-00:00:04,004 --> 00:00:07,508
-((新菜：わぁ…。
-
-2
-00:00:07,508 --> 00:00:09,676
-きれいだろ？
-
-3
-00:00:09,676 --> 00:00:13,347
-このお雛さん
-じいちゃんたちが作ったんだぞ。
-
-4
-00:00:13,347 --> 00:00:15,349
-すげぇだろ？
-
-5
-00:00:15,349 --> 00:03:20,520
-うん　すごい…　すごい　きれい。
-
-6
-00:00:20,520 --> 00:00:25,025
-世界で　一番きれい…。`;
-
 const subsContent = document.getElementById("subs-content");
 const subsList = document.getElementById("subs-list");
 const sgTemplate = document.querySelector(".subs-group-template");
@@ -43,13 +17,14 @@ const SubsList = {
     let lineGroups = [];
     let subGroups = [];
     for (let line of lines) {
+      line = line.trim();
       // parse collected lines on empty line
       if (line === "") {
         // restart collecting when not enough lines
         if (lineGroups.length < 3) {
-          console.info(
-            `Not enough data in the sub group, expected at least 3 lines, got ${lineGroups.length} ${lineGroups}`,
-          );
+          // console.info(
+          //   `Not enough data in the sub group, expected at least 3 lines, got ${lineGroups.length} ${lineGroups}`,
+          // );
           lineGroups = [];
           continue;
         }
@@ -160,5 +135,3 @@ function parseTimestamp(ts) {
     stamp,
   };
 }
-
-SubsList.set(testStr);

@@ -4,10 +4,7 @@ let videoLoaded = false;
 
 const VideoPlayer = {
   init() {
-    videoUploadBtn.addEventListener("change", (e) => {
-      const { files } = e.target;
-      console.log(files);
-    });
+    videoPlayer.volume = 0.5;
 
     videoPlayer.addEventListener("loadedmetadata", () => {
       videoLoaded = true;
@@ -16,6 +13,10 @@ const VideoPlayer = {
 
   setVideoUpdateCallback(fn) {
     videoPlayer.addEventListener("timeupdate", fn);
+  },
+
+  setVideo(url) {
+    videoPlayer.src = url;
   },
 
   getCurrentTime() {
