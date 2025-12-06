@@ -27,6 +27,7 @@ function syncSubs() {
   const sub = SubsList.findSubByTimestamp(
     ts + this.desync + floatingPointDesyncFix,
   );
+  console.log(ts + this.desync + floatingPointDesyncFix);
   if (sub?.node) {
     SubsList.updateCurrent(sub.node);
   }

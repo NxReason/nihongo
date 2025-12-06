@@ -4,6 +4,8 @@ const sgTemplate = document.querySelector(".subs-group-template");
 sgTemplate.classList.remove("subs-group-template");
 const SubsList = {
   subs: {},
+  current: null,
+
   init() {},
 
   set(subsStr) {
@@ -83,7 +85,7 @@ const SubsList = {
         ts === values[index] || // separate to short curcuit
         (ts > values[index] && ts < values[index + 1]);
       if (found) return values[index];
-      if (min === max) return values[min];
+      if (min === max) return 0;
 
       if (ts < values[index]) return bSearch(ts, values, min, index);
       if (ts > values[index]) return bSearch(ts, values, index + 1, max);
@@ -94,10 +96,14 @@ const SubsList = {
   },
 
   updateCurrent(currentSub) {
+    if (currentSub === this.current) return;
+
     for (let sub of Object.keys(this.subs)) {
       this.subs[sub]?.node.classList.remove("current");
     }
     currentSub.classList.add("current");
+    this.current = currentSub;
+    currentSub.scrollIntoView({ block: "center", behavior: "smooth" });
   },
 
   clear() {
