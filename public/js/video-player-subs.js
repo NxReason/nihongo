@@ -79,7 +79,7 @@ const SubsList = {
       timeNode.textContent = `${h}:${m}:${s}`;
 
       const contentNode = li.querySelector(".subs-group-text");
-      contentNode.textContent = g.content;
+      contentNode.innerHTML = g.content;
 
       subsList.appendChild(li);
     }
@@ -99,11 +99,23 @@ const SubsList = {
 
   findSubByTimestamp(ts) {
     const stamps = Object.keys(this.subs);
-    let check = Math.floor(stamps.length / 2);
-    while (true) {
-      let testStamp = this.subs[check].data.ts.start.stamp;
-      if (check === stamps.length) return stamps[stamps.length - 1];
-    }
+
+    const bSearch = (ts, values, min, max) => {
+      if (min >= values.length - 1) return values[values.length - 1];
+      const index = Math.floor((min + max) / 2);
+
+      const found =
+        ts === values[index] || // separate to short curcuit
+        (ts > values[index] && ts < values[index + 1]);
+      if (found) return values[index];
+      if (min === max) return values[min];
+
+      if (ts < values[index]) return bSearch(ts, values, min, index);
+      if (ts > values[index]) return bSearch(ts, values, index + 1, max);
+    };
+
+    const currentSub = bSearch(ts, stamps, 0, stamps.length);
+    return this.subs[currentSub];
   },
 
   updateCurrent(currentSub) {
@@ -121,13 +133,13 @@ const SubsList = {
   },
 };
 
-function parseSubGroup([pos, timestamp, content]) {
+function parseSubGroup([pos, timestamp, ...content]) {
   const [startStr, endStr] = timestamp.split(" --> ");
   const [start, end] = [parseTimestamp(startStr), parseTimestamp(endStr)];
 
   return {
     pos,
-    content,
+    content: content.join("</br>"),
     ts: { start, end },
   };
 }
